@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  
+  <!-- Web -->
+  <meta name="description" content="Project website that presents the work for Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion.">
+  <meta property="og:title" content="Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion"/>
+  <meta property="og:description" content="A control approach that combines the strengths of a reduced order model and MPC to enable humanoid robots to achieve robust and versatile locomotion in real-time."/>
+  <meta property="og:url" content="https://rom-cimpc.github.io/"/>
+  <meta property="og:image" content="./static/image/hero.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="robotics, control, locomotion, humanoid, bipedal robot, walking, reduced order model, mpc, contact-rich, multi-contact">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>ROM-CIMPC</title>
+  <link rel="icon" type="image/x-icon" href="static/images/hero.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+
+<body>  
+
+<!-- Title and Authors -->
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-3 publication-title">Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="https://estebanengineering.com/" target="_blank">Sergio A. Esteban</a>, </span>
+                <span class="author-block">
+                  <a href="https://vincekurtz.github.io/" target="_blank">Vince Kurtz</a>, </span>
+                  <span class="author-block">
+                    <a href="https://www.ghansah.org/" target="_blank">Adrian B. Ghansah</a>, and</span>
+                    <span class="author-block">
+                      <a class="author-link" href="http://ames.caltech.edu/" target="_blank">Aaron D. Ames</a>
+                    </span>
+                  </div>
+
+                  <div class="is-size-5 publication-authors">
+                    <span class="author-block">California Institute of Technology<br>AMBER Lab</span>
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                    <!-- Arxiv PDF link -->
+                    <span class="link-block">
+                        <a href="https://arxiv.org/pdf/2502.15630" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Paper</span>
+                      </a>
+                    </span>
+
+                    <!-- ArXiv abstract Link -->
+                    <span class="link-block">
+                      <a href="https://arxiv.org/abs/2502.15630" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                      </span>
+                    <span>arXiv</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Title and Authors -->
+
+
+<!-- Teaser video-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h2 class="title is-3 has-text-centered">Project Overview</h2>
+      <video poster="" id="tree" autoplay controls muted loop height="100%">
+        <!-- Your video here -->
+        <source src="./static/videos/ICRA25_4163_VI_i.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Humanoid robots have great potential for real-world applications due to their ability to operate in environments built for humans, but their deployment is hindered by the challenge of controlling their underlying high-dimensional nonlinear hybrid dynamics. While reduced-order models like the Hybrid Linear Inverted Pendulum (HLIP) are simple and computationally efficient, they lose whole-body expressiveness. Meanwhile, recent advances in Contact-Implicit Model Predictive Control (CI-MPC) enable robots to plan through multiple hybrid contact modes, but remain vulnerable to local minima and require significant tuning. We propose a control framework that combines the strengths of HLIP and CI-MPC. The reduced-order model generates a nominal gait, while CI-MPC manages the whole-body dynamics and modifies the contact schedule as needed. We demonstrate the effectiveness of this approach in simulation with a novel 24 degree-of-freedom humanoid robot: Achilles. Our proposed framework achieves rough terrain walking, disturbance recovery, robustness under model and state uncertainty, and allows the robot to interact with obstacles in the environment, all while running online in real-time at 50 Hz.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Control Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+                <h2 class="title is-3">Control Approach</h2>
+            </div>
+            <figure class="image is-flex is-justify-content-center">
+                <img src="./static/images/control_architecture.png" alt="Demo Task" style="max-width: 100%;">
+            </figure>
+            <p>Our control architecture combines the HLIP with CI-MPC. The HLIP tracks user specified velocity commands and then, via inverse kinematics and finite difference, we obtain a state trajectory where after combination produces a trajectory for the legs. CI-MPC tracks this trajectory that is interpolated and passed to low-level control of the robot.</p>
+          </div>
+      </div>
+  </div>
+</section>
+<!-- End Control Architecture -->
+
+
+<!-- Results -->
+<section class="section">
+  <div class="container is-max-desktop">
+      <div class="columns is-centered">
+          <div class="column">
+            <div class="content">
+                <h2 class="title is-3">ROM Guided CI-MPC Enables Diverse Behavior</h2>
+            </div>
+                
+                <!-- Natural Walking -->
+                <div class="content">
+                  <h3 class="title is-4">Natural Walking</h3>
+                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
+                    <source src="./static/videos/website_nominal_walking.mp4" type="video/mp4">
+                  </video>
+                  <p><strong>Our proposed method enables natural walking. </strong>
+                      Since HLIP by itself works with a fixed contact schedule and stability depends on step-to-step
+                      dynamics, we get periodic marching even at zero velocity. Additionally, the HLIP natively does not encode any motion for the arms.
+                      HLIP fails at low height walking. CI-MPC by itself yields foot dragging and at higher velocities, converges to unpredictable periodic behavior.
+                      Our proposed method however, is able to walk naturally at a range of velocities and heights. integrating the HLIP with CI-MPC allows us to
+                      regulate the unpredictable behavior of CI-MPC while benefiting from the HLIP's robust step-to-step stability via foot placement.</p>
+                  </p>
+                </div>
+
+                <div class="content">
+                  <h3 class="title is-4">Multi-Contact Walking</h3>
+                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
+                    <source src="./static/videos/website_planar_walking.mp4" type="video/mp4">
+                  </video>
+                  <p><strong>Our proposed method enables multi-contact walking. </strong>
+                      HLIP by itself is limited to a single contact mode for each foot since it only considers point feet. The flexibility of CI-MPC allows 
+                      exploration of different contact modes. By leveraging this flexibility, gaits produced by our method considers contact sequences for every collision geometry.
+                  </p>
+                </div>
+
+                <!-- Disturbance Recovery -->
+                <div class="content">
+                  <h3 class="title is-4">Disturbance Recovery</h3>
+                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
+                    <source src="./static/videos/website_disturbances.mp4" type="video/mp4">
+                  </video>
+                  <p><strong>Our proposed method improves disturbance recovery.</strong>
+                      We consider recovery to pushes in directions in the horizontal plane of maginute 50 N. Our proposed method recovers from these disturbances by adjusting
+                      the contact schedule to maintain stability. While tracking a velocity command, the robot deviates from a nominal orbit and returns to the orbit
+                      after recovery from the disturbance. Since CI-MPC can reason about multiple contact modes, it can adjust the contact schedule
+                      of the hands to interact with the environment (i.e., the wall). 
+                  </p>
+                </div>
+                
+                <!-- Rough Terrain -->
+                <div class="content">
+                  <h3 class="title is-4">Robust Locomotion</h3>
+                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
+                    <source src="./static/videos/rough_terrain.mp4" type="video/mp4">
+                  </video>
+                  <p><strong>Robustness over unknown terrain.</strong>
+                      Foot placement from the HLIP allows for stability of the robot and the whole-body consideration from the CI-MPC allows for deformation of the
+                      feet over the unknown terrain and arm swinging to help maintain balance.
+                  </p>
+                </div>
+                
+                <!-- Drop from high place -->
+                <div class="content">
+                  <h3 class="title is-4">Highly Dynamic Whole-body Coordination</h3>
+                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
+                    <source src="./static/videos/website_drop.mp4" type="video/mp4">
+                  </video>
+                  <p><strong>Whole-body coordination is observed in a highly dynamic setting.</strong>
+                      We drop the robot from a height of 1.0 m at a forward velocity of 1.0 m/s. The robot ccordinates its whole-body by swinging its arms
+                      and bending its knees to absorb the impact. Although there is little to no influnce from the HLIP, CI-MPC is leveraged for its whole-body
+                      coordination capabilities and decides the landing times of the feet.
+                  </p>
+                </div>
+
+          </div>
+        </div>
+    </div>
+</section>
+<!-- End Results -->
+
+
+<!-- Control Architecture -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/ROM_CIMPC_Poster.pdf" width="100%" height="1000">
+          </iframe>
+        
+      </div>
+    </div>
+</section>
+<!-- End Control Architecture -->
+
+
+<!--BibTex citation -->
+  <section class="section" id="Citation">
+    <div class="container is-max-desktop content">
+      <h2 class="title">Citation</h2>
+      <p>
+        If you find this work useful, please consider citing it as:
+      </p>
+      <pre><code>
+@article{esteban2025reduced,
+  title={Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion},
+  author={Sergio A. Esteban and Vince Kurtz and Adrian B. Ghansah and Aaron D. Ames},
+  journal={arXiv preprint arXiv:2502.15630},
+  year={2025}
+}
+      </code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+<!-- Website adapted from Nerfies -->
+<footer class="footer">
+  <div class="container">
+      <div class="columns is-centered">
+          <div class="column is-8">
+              <div class="content has-text-centered">
+                  <p>
+                      This page was adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+                  </p>
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+</body>
+</html>
