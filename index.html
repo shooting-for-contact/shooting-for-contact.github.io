@@ -3,21 +3,26 @@
 <head>
   <meta charset="utf-8">
   <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
-  
+
   <!-- Web -->
-  <meta name="description" content="Project website that presents the work for Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion.">
-  <meta property="og:title" content="Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion"/>
-  <meta property="og:description" content="A control approach that combines the strengths of a reduced order model and MPC to enable humanoid robots to achieve robust and versatile locomotion in real-time."/>
-  <meta property="og:url" content="https://rom-cimpc.github.io/"/>
-  <meta property="og:image" content="./static/image/hero.png" />
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta name="description" content="Project website for Shooting for Contact: Contact-Implicit Multiple Shooting for Dynamic Motion Retargeting.">
+  <meta property="og:title" content="Shooting for Contact: Contact-Implicit Multiple Shooting for Dynamic Motion Retargeting"/>
+  <meta property="og:description" content="A contact-implicit, direct simulation-based multiple-shooting (DSMS) framework that turns kinematically feasible references into dynamically feasible whole-body humanoid trajectories."/>
+  <meta property="og:url" content="https://shooting-for-contact.github.io/"/>
+  <meta property="og:image" content="https://shooting-for-contact.github.io/static/images/hero.png"/>
+  <meta property="og:image:width" content="753"/>
+  <meta property="og:image:height" content="774"/>
+
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="Shooting for Contact: Contact-Implicit Multiple Shooting for Dynamic Motion Retargeting"/>
+  <meta name="twitter:description" content="Contact-implicit multiple shooting through a differentiable simulator for dynamically feasible humanoid motion retargeting."/>
+  <meta name="twitter:image" content="https://shooting-for-contact.github.io/static/images/hero.png"/>
 
   <!-- Keywords for your paper to be indexed by-->
-  <meta name="keywords" content="robotics, control, locomotion, humanoid, bipedal robot, walking, reduced order model, mpc, contact-rich, multi-contact">
+  <meta name="keywords" content="robotics, humanoid, motion retargeting, trajectory optimization, contact-implicit, multiple shooting, differentiable simulation, MuJoCo, reinforcement learning, motion imitation, Unitree G1, crawling, backflip, jump turn">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>ROM-CIMPC</title>
+  <title>Shooting for Contact</title>
   <link rel="icon" type="image/x-icon" href="static/images/hero.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -30,62 +35,91 @@
   <link rel="stylesheet" href="static/css/index.css">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
 </head>
 
-<body>  
+<body>
 
 <!-- Title and Authors -->
-  <section class="hero">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-3 publication-title">Shooting for Contact:<br>Contact-Implicit Multiple Shooting for Dynamic Motion Retargeting</h1>
+
+          <div class="is-size-5 publication-authors">
+            <!-- Paper authors -->
+            <span class="author-block">
+              <a href="https://saesteban.com/" target="_blank">Sergio A. Esteban</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <!-- TODO: add personal page link -->
+              Jason H. K. Siu<sup>1</sup>,</span>
+            <span class="author-block">
+              <!-- TODO: add personal page link -->
+              Derrick Mach<sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://junhengl.github.io/" target="_blank">Junheng Li</a><sup>1</sup>,</span>
+            <span class="author-block">
+              <a href="https://vincekurtz.github.io/" target="_blank">Vince Kurtz</a><sup>2</sup>,</span>
+            <span class="author-block">
+              <a href="https://www.eas.caltech.edu/people/jburdick" target="_blank">Joel W. Burdick</a><sup>1</sup>, and</span>
+            <span class="author-block">
+              <a class="author-link" href="http://ames.caltech.edu/" target="_blank">Aaron D. Ames</a><sup>1</sup>
+            </span>
+          </div>
+
+          <div class="is-size-6 publication-authors affiliations">
+            <span class="author-block"><sup>1</sup>California Institute of Technology &nbsp;&nbsp; <sup>2</sup>DePaul University</span>
+          </div>
+
+          <div class="lab-logo">
+            <a href="http://www.bipedalrobotics.com/" target="_blank">
+              <img src="./static/images/AMBER_logo_white_back.svg" alt="AMBER Lab, Caltech">
+            </a>
+          </div>
+
           <div class="column has-text-centered">
-            <h1 class="title is-3 publication-title">Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- Paper authors -->
-              <span class="author-block">
-                <a href="https://estebanengineering.com/" target="_blank">Sergio A. Esteban</a>, </span>
-                <span class="author-block">
-                  <a href="https://vincekurtz.github.io/" target="_blank">Vince Kurtz</a>, </span>
-                  <span class="author-block">
-                    <a href="https://www.ghansah.org/" target="_blank">Adrian B. Ghansah</a>, and</span>
-                    <span class="author-block">
-                      <a class="author-link" href="http://ames.caltech.edu/" target="_blank">Aaron D. Ames</a>
-                    </span>
-                  </div>
+            <div class="publication-links">
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">California Institute of Technology<br>AMBER Lab</span>
-                  </div>
-
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                    <!-- Arxiv PDF link -->
-                    <span class="link-block">
-                        <a href="https://arxiv.org/pdf/2502.15630" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- ArXiv abstract Link -->
-                    <span class="link-block">
-                      <a href="https://arxiv.org/abs/2502.15630" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="ai ai-arxiv"></i>
-                      </span>
-                    <span>arXiv</span>
+              <!-- Paper PDF link -->
+              <span class="link-block">
+                <!-- TODO: point at the arXiv PDF once it is posted -->
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
                 </a>
               </span>
+
+              <!-- ArXiv abstract link -->
+              <span class="link-block">
+                <!-- TODO: point at the arXiv abstract page once it is posted -->
+                <a href="#" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+
+              <!-- Code link -->
+              <span class="link-block">
+                <a href="https://github.com/sesteban951/shooting-for-contact" target="_blank"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+
             </div>
           </div>
         </div>
@@ -96,14 +130,14 @@
 <!-- End Title and Authors -->
 
 
-<!-- Teaser video-->
+<!-- Teaser video -->
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <h2 class="title is-3 has-text-centered">Project Overview</h2>
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="./static/videos/ICRA25_4163_VI_i.mp4" type="video/mp4">
+      <!-- Autoplay requires muted (browser policy); the video has narration,
+           so viewers can unmute with the controls. -->
+      <video id="teaser" autoplay controls muted loop playsinline>
+        <source src="./static/videos/ICHR26_0221_VI_i.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -119,7 +153,17 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Humanoid robots have great potential for real-world applications due to their ability to operate in environments built for humans, but their deployment is hindered by the challenge of controlling their underlying high-dimensional nonlinear hybrid dynamics. While reduced-order models like the Hybrid Linear Inverted Pendulum (HLIP) are simple and computationally efficient, they lose whole-body expressiveness. Meanwhile, recent advances in Contact-Implicit Model Predictive Control (CI-MPC) enable robots to plan through multiple hybrid contact modes, but remain vulnerable to local minima and require significant tuning. We propose a control framework that combines the strengths of HLIP and CI-MPC. The reduced-order model generates a nominal gait, while CI-MPC manages the whole-body dynamics and modifies the contact schedule as needed. We demonstrate the effectiveness of this approach in simulation with a novel 24 degree-of-freedom humanoid robot: Achilles. Our proposed framework achieves rough terrain walking, disturbance recovery, robustness under model and state uncertainty, and allows the robot to interact with obstacles in the environment, all while running online in real-time at 50 Hz.
+            Motion retargeting approaches often prioritize kinematic similarity over whole-body dynamics, contact
+            consistency, and actuation limits, yielding references that are difficult for reinforcement learning (RL)
+            policies to reproduce, particularly for contact-rich behaviors. We present a contact-implicit, direct
+            simulation-based multiple-shooting (DSMS) framework that transforms kinematically feasible references into
+            dynamically feasible whole-body trajectories. By embedding a differentiable simulator within a nonlinear
+            program, DSMS resolves contact, friction, impacts, self-collision, and joint limits internally while
+            enforcing tracking, actuation, and task constraints <em>without</em> prescribing a contact schedule or
+            introducing explicit contact constraints. Compared with existing retargeting methods, DSMS accelerates
+            motion-imitation RL training and yields policies with high success rates and low tracking error. We further
+            demonstrate zero-shot sim-to-real transfer on the Unitree G1 through command-conditioned contact-rich
+            crawling and a highly dynamic 180-degree jump-turn.
           </p>
         </div>
       </div>
@@ -129,162 +173,342 @@
 <!-- End paper abstract -->
 
 
-<!-- Control Architecture -->
+<!-- Method -->
 <section class="section">
   <div class="container is-max-desktop">
-      <div class="columns is-centered">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Direct Simulation-based Multiple Shooting</h2>
+        </div>
+
+        <figure class="image figure-card is-narrow" style="--fig-width: 50%">
+          <img src="./static/images/multi_shooting.svg" alt="Direct simulation-based multiple shooting">
+        </figure>
+        <p class="figure-caption has-text-centered">
+          The horizon is split into shooting intervals. Each interval is rolled out by the differentiable simulator, and
+          defect constraints stitch the intervals together.
+        </p>
+
+        <div class="content has-text-justified">
+          <p>
+            We transcribe trajectory optimization as a nonlinear program whose dynamics model is the <strong>discrete
+            transition map of a differentiable simulator</strong>. Shooting-node states are decision variables,
+            continuity is enforced through defect constraints, and each interval chains several fine substeps, so stiff
+            contact dynamics are resolved accurately while the NLP stays small.
+          </p>
+          <p>
+            Importantly, <strong>contact is not modeled explicitly</strong>: there is no contact schedule, no
+            complementarity relaxation, and no contact-force decision variables. Contact, friction, impacts,
+            self-collision, and joint limits are all resolved inside the simulator, leaving the NLP free to enforce
+            arbitrary constraints on states and commands. For highly dynamic motions such as backflips and rolls, we
+            apply the same program in a <strong>receding-horizon</strong> fashion.
+          </p>
+        </div>
+
+        <div class="columns is-centered method-highlights">
           <div class="column">
-            <div class="content">
-                <h2 class="title is-3">Control Approach</h2>
+            <div class="box has-text-centered">
+              <p class="title is-5">Contact-implicit</p>
+              <p class="is-size-6">No explicit contact constraints needed.</p>
             </div>
-            <figure class="image is-flex is-justify-content-center">
-                <img src="./static/images/control_architecture.png" alt="Demo Task" style="max-width: 100%;">
-            </figure>
-            <p>Our control architecture combines the HLIP with CI-MPC. The HLIP tracks user specified velocity commands and then, via inverse kinematics and finite difference, we obtain a state trajectory where after combination produces a trajectory for the legs. CI-MPC tracks this trajectory that is interpolated and passed to low-level control of the robot.</p>
           </div>
-      </div>
-  </div>
-</section>
-<!-- End Control Architecture -->
-
-
-<!-- Results -->
-<section class="section">
-  <div class="container is-max-desktop">
-      <div class="columns is-centered">
           <div class="column">
-            <div class="content">
-                <h2 class="title is-3">ROM Guided CI-MPC Enables Diverse Behavior</h2>
+            <div class="box has-text-centered">
+              <p class="title is-5">Whole-body feasible</p>
+              <p class="is-size-6">Trajectories satisfy the full-order dynamics, friction, and actuation limits.</p>
             </div>
-                
-                <!-- Natural Walking -->
-                <div class="content">
-                  <h3 class="title is-4">Natural Walking</h3>
-                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
-                    <source src="./static/videos/website_nominal_walking.mp4" type="video/mp4">
-                  </video>
-                  <p><strong>Our proposed method enables natural walking. </strong>
-                      Since HLIP by itself works with a fixed contact schedule and stability depends on step-to-step
-                      dynamics, we get periodic marching even at zero velocity. Additionally, the HLIP natively does not encode any motion for the arms.
-                      HLIP fails at low height walking. CI-MPC by itself yields foot dragging and at higher velocities, converges to unpredictable periodic behavior.
-                      Our proposed method however, is able to walk naturally at a range of velocities and heights. integrating the HLIP with CI-MPC allows us to
-                      regulate the unpredictable behavior of CI-MPC while benefiting from the HLIP's robust step-to-step stability via foot placement.</p>
-                  </p>
-                </div>
-
-                <div class="content">
-                  <h3 class="title is-4">Multi-Contact Walking</h3>
-                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
-                    <source src="./static/videos/website_planar_walking.mp4" type="video/mp4">
-                  </video>
-                  <p><strong>Our proposed method enables multi-contact walking. </strong>
-                      HLIP by itself is limited to a single contact mode for each foot since it only considers point feet. The flexibility of CI-MPC allows 
-                      exploration of different contact modes. By leveraging this flexibility, gaits produced by our method considers contact sequences for every collision geometry.
-                  </p>
-                </div>
-
-                <!-- Disturbance Recovery -->
-                <div class="content">
-                  <h3 class="title is-4">Disturbance Recovery</h3>
-                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
-                    <source src="./static/videos/website_disturbances.mp4" type="video/mp4">
-                  </video>
-                  <p><strong>Our proposed method improves disturbance recovery.</strong>
-                      We consider recovery to pushes in directions in the horizontal plane of maginute 50 N. Our proposed method recovers from these disturbances by adjusting
-                      the contact schedule to maintain stability. While tracking a velocity command, the robot deviates from a nominal orbit and returns to the orbit
-                      after recovery from the disturbance. Since CI-MPC can reason about multiple contact modes, it can adjust the contact schedule
-                      of the hands to interact with the environment (i.e., the wall). 
-                  </p>
-                </div>
-                
-                <!-- Rough Terrain -->
-                <div class="content">
-                  <h3 class="title is-4">Robust Locomotion</h3>
-                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
-                    <source src="./static/videos/rough_terrain.mp4" type="video/mp4">
-                  </video>
-                  <p><strong>Robustness over unknown terrain.</strong>
-                      Foot placement from the HLIP allows for stability of the robot and the whole-body consideration from the CI-MPC allows for deformation of the
-                      feet over the unknown terrain and arm swinging to help maintain balance.
-                  </p>
-                </div>
-                
-                <!-- Drop from high place -->
-                <div class="content">
-                  <h3 class="title is-4">Highly Dynamic Whole-body Coordination</h3>
-                  <video class="responsive-video" poster="" id="tree" autoplay controls muted loop>
-                    <source src="./static/videos/website_drop.mp4" type="video/mp4">
-                  </video>
-                  <p><strong>Whole-body coordination is observed in a highly dynamic setting.</strong>
-                      We drop the robot from a height of 1.0 m at a forward velocity of 1.0 m/s. The robot ccordinates its whole-body by swinging its arms
-                      and bending its knees to absorb the impact. Although there is little to no influnce from the HLIP, CI-MPC is leveraged for its whole-body
-                      coordination capabilities and decides the landing times of the feet.
-                  </p>
-                </div>
-
+          </div>
+          <div class="column">
+            <div class="box has-text-centered">
+              <p class="title is-5">Arbitrary constraints</p>
+              <p class="is-size-6">Equality and inequality path, boundary, and task constraints are supported.</p>
+            </div>
           </div>
         </div>
-    </div>
-</section>
-<!-- End Results -->
 
-
-<!-- Control Architecture -->
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/ROM_CIMPC_Poster.pdf" width="100%" height="1000">
-          </iframe>
-        
       </div>
     </div>
+  </div>
 </section>
-<!-- End Control Architecture -->
+<!-- End Method -->
 
 
-<!--BibTex citation -->
-  <section class="section" id="Citation">
-    <div class="container is-max-desktop content">
-      <h2 class="title">Citation</h2>
-      <p>
-        If you find this work useful, please consider citing it as:
-      </p>
-      <pre><code>
-@article{esteban2025reduced,
-  title={Reduced-Order Model Guided Contact-Implicit Model Predictive Control for Humanoid Locomotion},
-  author={Sergio A. Esteban and Vince Kurtz and Adrian B. Ghansah and Aaron D. Ames},
-  journal={arXiv preprint arXiv:2502.15630},
-  year={2025}
-}
-      </code></pre>
+<!-- Gait synthesis and learning -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Gait Libraries and Motion-Imitation RL</h2>
+        </div>
+
+        <div class="columns is-centered">
+          <div class="column is-35">
+            <figure class="image figure-card">
+              <img src="./static/images/cycle_closure.svg" alt="Limit cycle closure">
+            </figure>
+            <p class="figure-caption has-text-centered">Limit-cycle closure.</p>
+          </div>
+          <div class="column is-65">
+            <figure class="image figure-card">
+              <img src="./static/images/architecture.svg" alt="Learning architecture">
+            </figure>
+            <p class="figure-caption has-text-centered">Learning architecture.</p>
+          </div>
+        </div>
+
+        <div class="content has-text-justified">
+          <p>
+            To synthesize <strong>command-conditioned periodic gaits</strong>, we solve the NLP over a single gait cycle
+            with equality constraints that close the motion into a limit cycle: the planar base pose advances by the
+            commanded displacement while the rest of the state returns to its initial value. Sweeping the commanded
+            twist over a grid yields a library of dynamically feasible command&ndash;gait pairs from just a few short
+            motion-capture clips.
+          </p>
+          <p>
+            A single RL policy tracks the library. An asymmetric actor&ndash;critic pairs a
+            <strong>reference-free actor</strong> &mdash; seeing only proprioception, the commanded twist, and the gait
+            phase &mdash; with a critic that also sees the gait reference, so the discrete library behaves like a
+            continuous velocity-command interface.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </section>
-<!--End BibTex citation -->
+<!-- End Gait synthesis and learning -->
+
+
+<!-- Hardware results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Hardware Deployment</h2>
+          <p class="has-text-justified">
+            Because each optimized reference is dynamically feasible by construction, the policies are trained on
+            physically achievable imitation targets and transfer <strong>zero-shot</strong> to the Unitree G1 without
+            any real-world fine-tuning.
+          </p>
+        </div>
+
+        <!-- 180 degree jump-turn -->
+        <div class="content">
+          <h3 class="title is-4">180&deg; Jump-Turn</h3>
+          <!-- TODO: static/videos/jump_turn.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/jump_turn.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>A highly dynamic maneuver from a reduced-order reference.</strong>
+            A motion-imitation policy is trained to reproduce a 180&deg; jump-turn generated from a single rigid-body
+            (SRB) trajectory and retargeted with DSMS. On hardware, the robot rotates roughly 180&deg; during the jump
+            and recovers to a stable landing.
+          </p>
+        </div>
+
+        <!-- Crawling: constrained space -->
+        <div class="content">
+          <h3 class="title is-4">Crawling Under Height-Constrained Spaces</h3>
+          <!-- TODO: static/videos/crawl_constrained.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/crawl_constrained.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>Contact-rich locomotion steered in real time.</strong>
+            Crawling involves frequent contacts with the hands, elbows, knees, and feet, including sliding contacts. The
+            operator steers the robot through commanded twists while it crawls forward and backward through a
+            height-constrained space.
+          </p>
+        </div>
+
+        <!-- Crawling: rough terrain -->
+        <div class="content">
+          <h3 class="title is-4">Crawling Over Rough Patches</h3>
+          <!-- TODO: static/videos/crawl_rough.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/crawl_rough.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>Robustness to unmodeled terrain.</strong>
+            The same policy traverses a height-constrained course with rough patches, absorbing terrain irregularities
+            that never appear in the gait library.
+          </p>
+        </div>
+
+        <!-- Crawling: grass -->
+        <div class="content">
+          <h3 class="title is-4">Crawling Uphill on Grass</h3>
+          <!-- TODO: static/videos/crawl_grass.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/crawl_grass.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>Outdoors, on compliant and sloped ground.</strong>
+            The crawling controller carries over to an outdoor grass slope, where friction and compliance differ
+            substantially from the training environment.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Hardware results -->
+
+
+<!-- Velocity tracking -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Velocity-Command Tracking</h2>
+        </div>
+
+        <figure class="image figure-card is-narrow" style="--fig-width: 60%">
+          <img src="./static/images/vel_track.svg" alt="Velocity tracking results">
+        </figure>
+        <p class="figure-caption has-text-centered">
+          Commanded (dashed), instantaneous body-frame velocity (actual), and per-interval mean velocities as the
+          crawling policy tracks forward, backward, and turning commands in one continuous run.
+        </p>
+
+        <div class="content has-text-justified">
+          <p>
+            We sample piecewise-constant twist commands and hold each for three gait cycles. Although the instantaneous
+            pelvis velocity oscillates strongly with gait phase &mdash; an inherent feature of crawling &mdash; the
+            cycle-averaged velocities follow the commanded trends across all three components of the twist.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Velocity tracking -->
+
+
+<!-- Simulation results -->
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column">
+        <div class="content">
+          <h2 class="title is-3">Dynamic Contact-Rich Motions</h2>
+          <p class="has-text-justified">
+            DSMS handles whole-body maneuvers that make and break contact across many body parts. In each clip, the blue
+            ghost visualizes the dynamically infeasible reference.
+          </p>
+        </div>
+
+        <!-- Humanoid backflip -->
+        <div class="content">
+          <h3 class="title is-4">Humanoid Backflip</h3>
+          <!-- TODO: static/videos/backflip.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/backflip.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>A dynamically feasible flip from a reduced-order reference.</strong>
+            Starting from a single rigid-body trajectory, DSMS recovers the whole-body motion &mdash; the crouch, the
+            arm swing that supplies angular momentum, and the landing &mdash; without ever being told when the feet
+            should leave or touch the ground.
+          </p>
+        </div>
+
+        <!-- Super hero backflip -->
+        <div class="content">
+          <h3 class="title is-4">Super Hero Backflip</h3>
+          <!-- TODO: static/videos/hero_backflip.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/hero_backflip.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>Multi-limb contact on landing.</strong>
+            The reference lands across the arms, knees, and feet and contains artifacts such as knees clipping through
+            the ground. DSMS resolves these into a physically consistent landing sequence while preserving the
+            character of the motion.
+          </p>
+        </div>
+
+        <!-- Quadruped jump-turn -->
+        <div class="content">
+          <h3 class="title is-4">Quadruped Jump-Turn</h3>
+          <!-- TODO: static/videos/quadruped_jump_turn.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/quadruped_jump_turn.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>The same formulation on a different morphology.</strong>
+            Nothing in DSMS is humanoid-specific: swapping the model is enough to retarget a jumping turn onto a
+            quadruped, with all four feet making and breaking contact through the maneuver.
+          </p>
+        </div>
+
+        <!-- Humanoid side-rolling -->
+        <div class="content">
+          <h3 class="title is-4">Humanoid Side-Rolling</h3>
+          <!-- TODO: static/videos/side_roll.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/side_roll.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>Contact sweeping across the whole body.</strong>
+            Rolling drags contact continuously over the shoulders, back, hips, and limbs &mdash; a sequence that would
+            be impractical to schedule by hand, and which the simulator resolves internally.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Simulation results -->
+
+
+<!-- BibTex citation -->
+<section class="section" id="Citation">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Citation</h2>
+    <p>
+      If you find this work useful, please consider citing it as:
+    </p>
+    <pre><code>
+@article{esteban2026shooting,
+  title={Shooting for Contact: Contact-Implicit Multiple Shooting for Dynamic Motion Retargeting},
+  author={Sergio A. Esteban and Jason H. K. Siu and Derrick Mach and Junheng Li and Vince Kurtz and Joel W. Burdick and Aaron D. Ames},
+  journal={arXiv preprint arXiv:XXXX.XXXXX},
+  year={2026}
+}
+    </code></pre>
+  </div>
+</section>
+<!-- End BibTex citation -->
 
 
 <!-- Website adapted from Nerfies -->
 <footer class="footer">
   <div class="container">
-      <div class="columns is-centered">
-          <div class="column is-8">
-              <div class="content has-text-centered">
-                  <p>
-                      This page was adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-                  </p>
-              </div>
-          </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content has-text-centered">
+          <p>
+            This page was adapted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+          </p>
+        </div>
       </div>
+    </div>
   </div>
 </footer>
 
 
 <!-- Statcounter tracking code -->
-  
+
 <!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
 
-    <!-- End of Statcounter Code -->
+<!-- End of Statcounter Code -->
 
 </body>
 </html>
