@@ -87,8 +87,7 @@
 
               <!-- Paper PDF link -->
               <span class="link-block">
-                <!-- TODO: point at the arXiv PDF once it is posted -->
-                <a href="#" target="_blank"
+                <a href="static/pdfs/Contact_Rich_Locomotion.pdf" target="_blank"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                     <i class="fas fa-file-pdf"></i>
@@ -209,20 +208,28 @@
         <div class="columns is-centered method-highlights">
           <div class="column">
             <div class="box has-text-centered">
+              <p class="title is-5">Whole-body feasible</p>
+              <p class="is-size-6">Trajectories satisfy the full-order dynamics, friction, self-collision, and
+                actuation limits.</p>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box has-text-centered">
               <p class="title is-5">Contact-implicit</p>
               <p class="is-size-6">No explicit contact constraints needed.</p>
             </div>
           </div>
           <div class="column">
             <div class="box has-text-centered">
-              <p class="title is-5">Whole-body feasible</p>
-              <p class="is-size-6">Trajectories satisfy the full-order dynamics, friction, and actuation limits.</p>
+              <p class="title is-5">Arbitrary constraints</p>
+              <p class="is-size-6">Equality and inequality path, boundary, and task constraints are supported.</p>
             </div>
           </div>
           <div class="column">
             <div class="box has-text-centered">
-              <p class="title is-5">Arbitrary constraints</p>
-              <p class="is-size-6">Equality and inequality path, boundary, and task constraints are supported.</p>
+              <p class="title is-5">Morphology-agnostic</p>
+              <p class="is-size-6">Nothing is humanoid-specific &mdash; swapping the model retargets onto other
+                robots.</p>
             </div>
           </div>
         </div>
@@ -302,10 +309,12 @@
             <source src="./static/videos/jump_turn.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
-            <strong>A highly dynamic maneuver from a reduced-order reference.</strong>
-            A motion-imitation policy is trained to reproduce a 180&deg; jump-turn generated from a single rigid-body
-            (SRB) trajectory and retargeted with DSMS. On hardware, the robot rotates roughly 180&deg; during the jump
-            and recovers to a stable landing.
+            <strong>A highly dynamic maneuver from a reduced-order model reference.</strong>
+            A single rigid-body (SRB) trajectory is dynamically consistent only within a reduced representation: it
+            captures the center-of-mass dynamics but says little about whole-body dynamics, contact, or actuation
+            limits. DSMS takes such a <em>partially</em> dynamically feasible trajectory and resolves it into a
+            whole-body feasible reference for the 180&deg; jump-turn. A motion-imitation policy is then trained to
+            track it.
           </p>
         </div>
 
@@ -318,23 +327,26 @@
           </video>
           <p class="has-text-justified">
             <strong>Contact-rich locomotion steered in real time.</strong>
-            Crawling involves frequent contacts with the hands, elbows, knees, and feet, including sliding contacts. The
-            operator steers the robot through commanded twists while it crawls forward and backward through a
-            height-constrained space.
+            Crawling is a prototypical contact-rich behavior that DSMS can resolve: it involves frequent contacts with
+            the hands, elbows, knees, and feet, including <em>sliding</em> contacts, which methods that prescribe a
+            contact schedule or a fixed mode sequence struggle to represent. Because contact is resolved inside the
+            simulator, sticking and sliding are handled without any special treatment. The operator steers the robot
+            through commanded twists while it crawls through a pathway.
           </p>
         </div>
 
-        <!-- Crawling: rough terrain -->
+        <!-- Crawling: forwards and backwards -->
         <div class="content">
-          <h3 class="title is-4">Crawling Over Rough Patches</h3>
-          <!-- TODO: static/videos/crawl_rough.mp4 -->
+          <h3 class="title is-4">Crawling Forwards and Backwards</h3>
+          <!-- TODO: static/videos/crawl_fwd_bwd.mp4 -->
           <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/crawl_rough.mp4" type="video/mp4">
+            <source src="./static/videos/crawl_fwd_bwd.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
-            <strong>Robustness to unmodeled terrain.</strong>
-            The same policy traverses a height-constrained course with rough patches, absorbing terrain irregularities
-            that never appear in the gait library.
+            <strong>Steering across the full command space.</strong>
+            The operator drives the robot to crawl both forwards and backwards. Since the gait library is indexed by
+            the commanded twist &mdash; forward and lateral velocity together with yaw rate &mdash; reversing and
+            turning are served by the same set of DSMS-generated references.
           </p>
         </div>
 
@@ -347,8 +359,11 @@
           </video>
           <p class="has-text-justified">
             <strong>Outdoors, on compliant and sloped ground.</strong>
-            The crawling controller carries over to an outdoor grass slope, where friction and compliance differ
-            substantially from the training environment.
+            The same crawling policy carries over to an outdoor grass slope, where friction, compliance, and ground
+            geometry all differ substantially from the training environment. The robot crawls uphill under real-time
+            twist commands, with hands, elbows, knees, and feet repeatedly making and breaking contact on a deformable
+            surface. Sim-to-real randomization covers contact friction, base pushes, center-of-mass offsets, and
+            joint-encoder biases &mdash; but not ground compliance or slope. 
           </p>
         </div>
 
@@ -413,8 +428,7 @@
           <p class="has-text-justified">
             <strong>A dynamically feasible flip from a reduced-order reference.</strong>
             Starting from a single rigid-body trajectory, DSMS recovers the whole-body motion &mdash; the crouch, the
-            arm swing that supplies angular momentum, and the landing &mdash; without ever being told when the feet
-            should leave or touch the ground.
+            arm swing that supplies angular momentum, and the landing.
           </p>
         </div>
 
@@ -433,20 +447,6 @@
           </p>
         </div>
 
-        <!-- Quadruped jump-turn -->
-        <div class="content">
-          <h3 class="title is-4">Quadruped Jump-Turn</h3>
-          <!-- TODO: static/videos/quadruped_jump_turn.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/quadruped_jump_turn.mp4" type="video/mp4">
-          </video>
-          <p class="has-text-justified">
-            <strong>The same formulation on a different morphology.</strong>
-            Nothing in DSMS is humanoid-specific: swapping the model is enough to retarget a jumping turn onto a
-            quadruped, with all four feet making and breaking contact through the maneuver.
-          </p>
-        </div>
-
         <!-- Humanoid side-rolling -->
         <div class="content">
           <h3 class="title is-4">Humanoid Side-Rolling</h3>
@@ -458,6 +458,20 @@
             <strong>Contact sweeping across the whole body.</strong>
             Rolling drags contact continuously over the shoulders, back, hips, and limbs &mdash; a sequence that would
             be impractical to schedule by hand, and which the simulator resolves internally.
+          </p>
+        </div>
+
+        <!-- Quadruped jump-turn -->
+        <div class="content">
+          <h3 class="title is-4">Quadruped Jump-Turn</h3>
+          <!-- TODO: static/videos/quadruped_jump_turn.mp4 -->
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+            <source src="./static/videos/quadruped_jump_turn.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>The same formulation on a different morphology.</strong>
+            Nothing in DSMS is humanoid-specific: swapping the model is enough to retarget a jumping turn onto a
+            quadruped, with all four feet making and breaking contact through the maneuver.
           </p>
         </div>
 
