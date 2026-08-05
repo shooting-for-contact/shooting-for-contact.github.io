@@ -135,7 +135,7 @@
     <div class="hero-body">
       <!-- Autoplay requires muted (browser policy); the video has narration,
            so viewers can unmute with the controls. -->
-      <video id="teaser" autoplay controls muted loop playsinline>
+      <video id="teaser" autoplay controls muted loop playsinline preload="auto">
         <source src="./static/videos/ICHR26_0221_VI_i.mp4" type="video/mp4">
       </video>
     </div>
@@ -304,8 +304,7 @@
         <!-- 180 degree jump-turn -->
         <div class="content">
           <h3 class="title is-4">180&deg; Jump-Turn</h3>
-          <!-- TODO: static/videos/jump_turn.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
             <source src="./static/videos/jump_turn.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
@@ -321,9 +320,8 @@
         <!-- Crawling: constrained space -->
         <div class="content">
           <h3 class="title is-4">Crawling Under Height-Constrained Spaces</h3>
-          <!-- TODO: static/videos/crawl_constrained.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/crawl_constrained.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/crawl_constraint.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>Contact-rich locomotion steered in real time.</strong>
@@ -338,9 +336,8 @@
         <!-- Crawling: forwards and backwards -->
         <div class="content">
           <h3 class="title is-4">Crawling Forwards and Backwards</h3>
-          <!-- TODO: static/videos/crawl_fwd_bwd.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/crawl_fwd_bwd.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/crawl_fwd_back.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>Steering across the full command space.</strong>
@@ -353,9 +350,8 @@
         <!-- Crawling: grass -->
         <div class="content">
           <h3 class="title is-4">Crawling Uphill on Grass</h3>
-          <!-- TODO: static/videos/crawl_grass.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/crawl_grass.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/crawl_up_hill.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>Outdoors, on compliant and sloped ground.</strong>
@@ -363,7 +359,24 @@
             geometry all differ substantially from the training environment. The robot crawls uphill under real-time
             twist commands, with hands, elbows, knees, and feet repeatedly making and breaking contact on a deformable
             surface. Sim-to-real randomization covers contact friction, base pushes, center-of-mass offsets, and
-            joint-encoder biases &mdash; but not ground compliance or slope. 
+            joint-encoder biases &mdash; but not ground compliance or slope.
+          </p>
+        </div>
+
+        <!-- Crawling: cluttered lab traversal -->
+        <div class="content">
+          <h3 class="title is-4">Traversing a Cluttered Lab Space</h3>
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/crawl_free.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-justified">
+            <strong>A long, uninterrupted run through unstructured clutter.</strong>
+            Rather than a staged obstacle course, the robot explores the lab as it actually is &mdash; a
+            height-constrained space strewn with incidental objects that were never modeled, scanned, or randomized
+            over during training. It sets off from a ramp, where the supporting surface is inclined and the hands and
+            knees are loaded unevenly, then descends to the floor and negotiates whatever obstacles it meets there.
+            Throughout, the operator supplies only twist commands: no waypoints, no contact schedule, and no
+            environment-specific tuning. <em>Playback is sped up 1.5&times;.</em>
           </p>
         </div>
 
@@ -421,8 +434,7 @@
         <!-- Humanoid backflip -->
         <div class="content">
           <h3 class="title is-4">Humanoid Backflip</h3>
-          <!-- TODO: static/videos/backflip.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
             <source src="./static/videos/backflip.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
@@ -435,9 +447,8 @@
         <!-- Super hero backflip -->
         <div class="content">
           <h3 class="title is-4">Super Hero Backflip</h3>
-          <!-- TODO: static/videos/hero_backflip.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/hero_backflip.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/super_backflip.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>Multi-limb contact on landing.</strong>
@@ -450,9 +461,8 @@
         <!-- Humanoid side-rolling -->
         <div class="content">
           <h3 class="title is-4">Humanoid Side-Rolling</h3>
-          <!-- TODO: static/videos/side_roll.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/side_roll.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/backroll.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>Contact sweeping across the whole body.</strong>
@@ -464,9 +474,8 @@
         <!-- Quadruped jump-turn -->
         <div class="content">
           <h3 class="title is-4">Quadruped Jump-Turn</h3>
-          <!-- TODO: static/videos/quadruped_jump_turn.mp4 -->
-          <video class="responsive-video" poster="" autoplay controls muted loop playsinline>
-            <source src="./static/videos/quadruped_jump_turn.mp4" type="video/mp4">
+          <video class="responsive-video" poster="" autoplay controls muted loop playsinline preload="auto">
+            <source src="./static/videos/DOG.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
             <strong>The same formulation on a different morphology.</strong>
