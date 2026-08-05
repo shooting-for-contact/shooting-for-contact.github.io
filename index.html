@@ -354,11 +354,9 @@
           </video>
           <p class="has-text-justified">
             <strong>Outdoors, on compliant and sloped ground.</strong>
-            The same crawling policy carries over to an outdoor grass slope, where friction, compliance, and ground
-            geometry all differ substantially from the training environment. The robot crawls uphill under real-time
-            twist commands, with hands, elbows, knees, and feet repeatedly making and breaking contact on a deformable
-            surface. Sim-to-real randomization covers contact friction, base pushes, center-of-mass offsets, and
-            joint-encoder biases &mdash; but not ground compliance or slope.
+            The same crawling policy carries over to an outdoor grass slope. Sim-to-real randomization covers contact
+            friction, base pushes, center-of-mass offsets, and joint-encoder biases &mdash; but not the ground
+            compliance or slope encountered here.
           </p>
         </div>
 
@@ -369,12 +367,8 @@
             <source src="./static/videos/crawl_free.mp4" type="video/mp4">
           </video>
           <p class="has-text-justified">
-            <strong>A long, uninterrupted run through unstructured clutter.</strong>
-            Rather than a staged obstacle course, the robot explores the lab as it actually is &mdash; a
-            height-constrained space strewn with incidental objects that were never modeled, scanned, or randomized
-            over during training. It sets off from a ramp, where the supporting surface is inclined and the hands and
-            knees are loaded unevenly, then descends to the floor and negotiates whatever obstacles it meets there.
-            Throughout, the operator supplies only twist commands: no waypoints, no contact schedule, and no
+            <strong>A long, uninterrupted run through the lab.</strong>
+            The robot traverses through the lab as the operator supplies only twist commands: no waypoints, no contact schedule, and no
             environment-specific tuning. <em>Playback is sped up 1.5&times;.</em>
           </p>
         </div>
