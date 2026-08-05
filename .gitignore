@@ -1,7 +1,12 @@
-# Video working directories — masters and camera originals.
+# Video working directories — masters, camera originals, upload staging.
 # These are multi-GB and far over GitHub's 100 MB per-file limit.
 static/videos/original/
 static/videos/pre_processed/
+static/videos/pre-youtube/
+static/videos/sound_enable/
+
+# Local helper scripts (transcode pipeline) — not part of the published site.
+*.sh
 
 # Intermediate/master formats — never commit these, only the web .mp4 outputs.
 *.mov
